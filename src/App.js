@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
+import { FacebookShareButton, WhatsappShareButton, TwitterShareButton, FacebookIcon, WhatsappIcon, TwitterIcon } from 'react-share';
 
 const App = () => {
   const url = "https://api.quotable.io/random";
@@ -32,6 +33,23 @@ const App = () => {
         <div className="btns">
           <button onClick={copy} className="btn">Copy</button>
           <button onClick={generateQuote}>Generate Another Quote</button>
+        </div>
+        <div className='share__btns' style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'minmax(60px, auto)'}}>
+          <WhatsappShareButton
+            title={`${quote.content} ${' \n'} author: ${quote.author} ${' \n'} ${' \n'}`} url={`shared from: ${window.location.href}`}
+            style={{padding: '8px', margin: '5px', borderRadius: '4px', border: 'none', backgroundColor: '#25d366'}}>
+            <WhatsappIcon style={{width: '35px', height: '35px'}} />
+         </WhatsappShareButton>         
+         <FacebookShareButton
+          title={`${quote.content} ${' \n'} author: ${quote.author} ${' \n'} ${' \n'}`} url={`shared from: ${window.location.href}`} 
+          style={{padding: '8px', margin: '5px', borderRadius: '4px', border: 'none', backgroundColor: '#3b5998'}}>
+          <FacebookIcon  style={{width: '35px', height: '35px'}} />
+         </FacebookShareButton>
+         <TwitterShareButton
+          title={`${quote.content} ${' \n'} author: ${quote.author} ${' \n'} ${' \n'}`} url={`shared from: ${window.location.href}`} 
+          style={{padding: '8px', margin: '5px', borderRadius: '4px', border: 'none', backgroundColor: '#00aced'}}>
+          <TwitterIcon  style={{width: '35px', height: '35px'}} />
+         </TwitterShareButton>
         </div>
       </div>
     </>
