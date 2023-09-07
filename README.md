@@ -4,4 +4,6 @@ hello there, your task is to add social media share buttons, which can be used t
 
 fork the repository and start working on it.
 
+### preview: https://dev-mohamed-quote-generator.netlify.app/
+
 best of luck.
